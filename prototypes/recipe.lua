@@ -32,32 +32,6 @@ local ecologyModule3Recipe = {
     result = "ecology-module-3"
 }
 
-------------------
--- Wind Turbine --                                
-------------------
-
-local windTurbine = {
-    type = "recipe",
-    name = "wind-turbine",
-    enabled = false,
-    energy_required = 20, -- time to craft in seconds (at crafting speed 1)
-    ingredients = {{"copper-cable", 5}, {"plastic-bar", 15}, {"steel-plate", 15}},
-    result = "wind-turbine"
-}
-
-------------------
--- Air Purifier --                                
-------------------
-
-local airPurifier = {
-    type = "recipe",
-    name = "air-purifier",
-    enabled = false,
-    energy_required = 10, -- time to craft in seconds (at crafting speed 1)
-    ingredients = {{"electronic-circuit", 5}, {"iron-gear-wheel", 5}, {"steel-plate", 15}},
-    result = "air-purifier"
-}
-
 -----------------
 -- Air Filters --                                
 -----------------
@@ -76,68 +50,10 @@ local airFilterClean = {
     result = "air-filter-clean"
 }
 
-local airFilterDirty = {
-    type = "recipe",
-    name = "air-filter-dirty",
-    category = "air-filtering",
-    hidden_from_player_crafting = true,
-    enabled = false,
-    energy_required = 240, -- time to craft in seconds (at crafting speed 1)
-    ingredients = {{"air-filter-clean", 1}},
-    result = "air-filter-dirty"
-}
-
-local airFilterCleaned = {
-    type = "recipe",
-    name = "air-filter-cleaned",
-    hidden_from_player_crafting = true,
-    enabled = false,
-    energy_required = 115, -- time to craft in seconds (at crafting speed 1)
-    ingredients = {{"air-filter-dirty", 1}},
-    result = "air-filter-clean"
-}
-
-------------------
--- Tree Planter --
-------------------
-
-local treePlanter = {
-    type = "recipe",
-    name = "tree-planter",
-    enabled = false,
-    energy_required = 10, -- time to craft in seconds (at crafting speed 1)
-    ingredients = {{"inserter", 2}, {"empty-barrel", 10}, {"iron-plate", 20}},
-    result = "tree-planter"
-}
-
-local treePlantingCategory = {
-    type = "recipe-category",
-    name = "tree-planting"
-}
-
-local plantedTree = {
-    type = "recipe",
-    name = "planted-tree",
-    category = "tree-planting",
-    enabled = true,
-    hidden = true,
-    energy_required = 30, -- time to craft in seconds (at crafting speed 1)
-    ingredients = {{type="fluid", name="water", amount=100}},
-    result = "planted-tree"
-}
-
-
 data:extend{
     ecologyModuleRecipe, 
     ecologyModule2Recipe, 
     ecologyModule3Recipe, 
-    windTurbine, 
-    airPurifier, 
-    airFilterCategory, 
-    airFilterClean, 
-    airFilterDirty, 
-    airFilterCleaned,
-    treePlanter,
-    treePlantingCategory,
-    plantedTree
+    airFilterCategory,
+    airFilterClean
 }

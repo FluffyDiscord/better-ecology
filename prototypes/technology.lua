@@ -73,36 +73,8 @@ local ecologyModule3Technology = {
         time = 60
     }
 }
-
 ------------------
--- Wind Turbine --                                
-------------------
-
-local windTurbineTechnology = {
-    type = "technology",
-    name = "wind-turbine",
-    icon = "__better-ecology__/graphics/wind-turbine/wind-turbine-icon.png",
-    icon_size = 128,
-    prerequisites = {"solar-energy", "chemical-science-pack"},
-    effects = {
-        {
-            type = "unlock-recipe",
-            recipe = "wind-turbine"
-        }
-    },
-    unit = {
-        count = 500,
-        ingredients = {
-            {"automation-science-pack", 1},
-            {"logistic-science-pack", 1},
-            {"chemical-science-pack", 1}
-        },
-        time = 60
-    }
-}
-
-------------------
--- Air Purifier --                                
+-- Air Purifier --
 ------------------
 
 local airPurifierTechnology = {
@@ -114,50 +86,11 @@ local airPurifierTechnology = {
     effects = {
         {
             type = "unlock-recipe",
-            recipe = "air-purifier"
-        },
-        {
-            type = "unlock-recipe",
             recipe = "air-filter-clean"
-        },
-        {
-            type = "unlock-recipe",
-            recipe = "air-filter-dirty"
-        },
-        {
-            type = "unlock-recipe",
-            recipe = "air-filter-cleaned"
         }
     },
     unit = {
         count = 750,
-        ingredients = {
-            {"automation-science-pack", 1},
-            {"logistic-science-pack", 1},
-            {"chemical-science-pack", 1}
-        },
-        time = 45
-    }
-}
-
-------------------
--- Tree Planter --
-------------------
-
-local treePlanterTechnology = {
-    type = "technology",
-    name = "tree-planter",
-    icon = "__better-ecology__/graphics/tree-planter/tree-icon.png",
-    icon_size = 256,
-    prerequisites = {"wind-turbine"},
-    effects = {
-        {
-            type = "unlock-recipe",
-            recipe = "tree-planter"
-        }
-    },
-    unit = {
-        count = 500,
         ingredients = {
             {"automation-science-pack", 1},
             {"logistic-science-pack", 1},
@@ -172,7 +105,5 @@ data:extend{
     ecologyModule1Technology, 
     ecologyModule2Technology, 
     ecologyModule3Technology, 
-    windTurbineTechnology, 
-    airPurifierTechnology,
-    treePlanterTechnology
+    airPurifierTechnology
 }
